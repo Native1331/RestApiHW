@@ -8,7 +8,6 @@ import static io.restassured.http.ContentType.JSON;
 public class ReqresinTest {
    @Test
     void listUsersTest() {
-
         given()
                 .when()
                 .get("https://reqres.in/api/users?page=2")
@@ -37,9 +36,6 @@ public class ReqresinTest {
     void loginTest() {
         String body = "{ \"name\": \"morpheus\", " +
                 "\"job\": \"leader\" }";
-
-
-
         given()
                 .log().uri()
                 .log().body()
@@ -53,12 +49,10 @@ public class ReqresinTest {
                 .statusCode(201)
                 .body("name", is("morpheus"));
     }
+
     @Test
     void loginUnsuccesfullTest() {
         String body = "{ \"email\": \"peter@klaven\" }";
-
-
-
         given()
                 .log().uri()
                 .log().body()
@@ -72,6 +66,7 @@ public class ReqresinTest {
                 .statusCode(400)
                 .body("error", is("Missing password"));
     }
+
     @Test
     void deleteUserTest() {
                 given()
