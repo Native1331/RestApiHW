@@ -33,7 +33,7 @@ public class ReqresinTest {
     }
 
     @Test
-    void loginTest() {
+    void createUserTest() {
         String body = "{ \"name\": \"morpheus\", " +
                 "\"job\": \"leader\" }";
         given()
@@ -71,7 +71,7 @@ public class ReqresinTest {
     void deleteUserTest() {
                 given()
                 .when()
-                .delete("https://reqres.in/api/login")
+                .delete("https://reqres.in/api/users2")
                 .then()
                 .log().status()
                 .log().body()
